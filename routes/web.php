@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(array('prefix' => '/'), function() {
+  Route::get('', function () {return view('welcome');});
+  Route::get('theme', 'Theme\ThemeController@index');
+});
